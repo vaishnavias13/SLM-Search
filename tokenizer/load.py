@@ -7,6 +7,7 @@ TOKENIZER_PATH = Path(__file__).resolve().parent / "tokenizer.json"
 
 
 def load_tokenizer(path=TOKENIZER_PATH):
+    """`path` is the tokenizer.json file (default: tokenizer/tokenizer.json)."""
     return PreTrainedTokenizerFast(
         tokenizer_file=str(path),
         pad_token="[PAD]",

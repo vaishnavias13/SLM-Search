@@ -30,6 +30,11 @@ FastAPI service.
 - Model vocab size comes from `tokenizer.get_vocab_size()` after training.
 - Verify representative text gives no `[UNK]`.
 
+## Retrain-tokenizer reminder (IMPORTANT)
+After Phase 4, retrain the tokenizer on the synthetic data plus starter corpus, then rebuild the
+model before any training. Choose the vocab size based on corpus size (target about 8000).
+Rebuild in one command: `python model/initialize_model.py tokenizer` (then `python model/verify.py`).
+
 ## Data
 - General pretraining corpus is kept SEPARATE from synthetic database-search examples.
 - Synthetic examples are for task training. Prevent train/validation/test leakage.
